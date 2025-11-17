@@ -76,3 +76,33 @@
 - **预期效率提升**: 平均节省50-80%的手动操作时间
 
 **下一步**: 阶段3将进行有限度的案例搜索，阶段4开始构建具体模板
+
+---
+
+## 搜索发现（阶段3）
+
+### 找到的真实案例
+
+1. **OneRedOak/claude-code-workflows** - 双循环架构+GitHub Actions自动化PR审查 - [GitHub](https://github.com/OneRedOak/claude-code-workflows)
+2. **Pimzino/claude-code-spec-workflow** - 规范驱动开发工作流（需求→设计→任务→实现） - [GitHub](https://github.com/Pimzino/claude-code-spec-workflow)
+3. **Official Custom Slash Commands** - 可重用的prompt模板存储在.claude/commands/ - [官方文档](https://docs.claude.com/en/docs/claude-code/common-workflows)
+4. **Claude Code Hooks** - 生命周期触发器自动化工作流 - [Medium](https://medium.com/@joe.njenga/use-claude-code-hooks-newest-feature-to-fully-automate-your-workflow-341b9400cfbe)
+
+### 可借鉴的通用模式
+
+1. **Slash Command模式** - 适用于重复性任务（调试循环、日志分析、问题修复）
+2. **Plan Mode模式** - 适用于只读探索、代码审查、变更规划
+3. **Spec-Driven模式** - 适用于功能开发（需求分析→设计→实现）
+4. **Hook触发模式** - 适用于事件驱动自动化（提交前检查、构建后部署）
+5. **批量处理模式** - 适用于多文件操作（格式化、重构、数据提取）
+6. **迭代优化模式** - 适用于需要反馈循环的任务（测试→修复→验证）
+7. **模板填充模式** - 适用于结构化内容生成（文档、报告、代码脚手架）
+8. **数据管道模式** - 适用于数据转换（读取→清洗→转换→输出）
+
+### 关键技术要素
+
+- `.claude/` 目录结构：存放配置、模板、脚本
+- `$ARGUMENTS` 参数传递：使命令更灵活
+- `--continue` 和 `--print`：支持脚本化和自动化
+- GitHub Actions集成：CI/CD自动化
+- MCP浏览器自动化：网络数据采集
